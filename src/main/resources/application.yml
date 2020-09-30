@@ -1,0 +1,4 @@
+javafx:
+  title: 'tsp'
+  stage:
+    resizable: true

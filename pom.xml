@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<contributors>
+		<contributor>
+			<name>Illidan</name>
+		</contributor>
+	</contributors>
+
+	<groupId>com.illidan.school</groupId>
+	<artifactId>tsp</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+		<springboot-javafx-support.version>2.1.6</springboot-javafx-support.version>
+		<springboot-javafx-test.version>0.0.4</springboot-javafx-test.version>
+	</properties>
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<version>${spring-boot.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.roskenet</groupId>
+			<artifactId>springboot-javafx-support</artifactId>
+			<version>${springboot-javafx-support.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.roskenet</groupId>
+			<artifactId>springboot-javafx-test</artifactId>
+			<version>${springboot-javafx-test.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>
+						banner.txt
+					</include>
+					<include>
+						application.yml
+					</include>
+					<include>
+						**/*.fxml
+					</include>
+					<include>
+						**/*.css
+					</include>
+					<include>
+						**/*.png
+					</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>

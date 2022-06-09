@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <Pane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="900.0" stylesheets="@/global.css"
@@ -8,8 +9,37 @@
 	<children>
 		<Canvas id="tspCanvas" fx:id="tspCanvas" height="600.0" width="600.0"/>
 
-
 		<AnchorPane id="tspDashboard" fx:id="tspDashboard" layoutX="600.0" prefHeight="600.0" prefWidth="300.0">
+			<children>
+				<Label layoutX="43.0" layoutY="34.0" prefHeight="30.0" prefWidth="94.0" text="cityNumber"/>
+				<TextField layoutX="149.0" layoutY="34.0" prefHeight="30.0" prefWidth="112.0"
+				           fx:id="cityNumberText"/>
+				<Label layoutX="70.0" layoutY="89.0" prefHeight="30.0" prefWidth="67.0" text="popSize"/>
+				<TextField layoutX="149.0" layoutY="89.0" prefHeight="30.0" prefWidth="112.0" fx:id="popSizeText"/>
+				<Label layoutX="25.0" layoutY="145.0" prefHeight="30.0" prefWidth="112.0" text="maxGeneration"/>
+				<TextField layoutX="149.0" layoutY="145.0" prefHeight="30.0" prefWidth="112.0"
+				           fx:id="maxGenerationText"/>
+				<Label layoutX="31.0" layoutY="202.0" prefHeight="30.0" prefWidth="106.0" text="crossoverRate"/>
+				<TextField layoutX="149.0" layoutY="202.0" prefHeight="30.0" prefWidth="112.0"
+				           fx:id="crossoverRateText"/>
+				<Label layoutX="31.0" layoutY="253.0" prefHeight="30.0" prefWidth="106.0" text="mutationRate"/>
+				<TextField layoutX="149.0" layoutY="253.0" prefHeight="30.0" prefWidth="112.0"
+				           fx:id="mutationRateText"/>
+				<Label layoutX="37.0" layoutY="307.0" prefHeight="30.0" prefWidth="94.0" text="elitismCount"/>
+				<TextField layoutX="149.0" layoutY="307.0" prefHeight="30.0" prefWidth="112.0"
+				           fx:id="elitismCountText"/>
+				<Label layoutX="20.0" layoutY="362.0" prefHeight="30.0" prefWidth="118.0" text="tournamentSize"/>
+				<TextField layoutX="149.0" layoutY="362.0" prefHeight="30.0" prefWidth="112.0"
+				           fx:id="tournamentSizeText"/>
+				<Label layoutX="40.0" layoutY="412.0" prefHeight="30.0" prefWidth="118.0" text="totalDistance"/>
+				<TextField layoutX="149.0" layoutY="412.0" prefHeight="30.0" prefWidth="112.0"
+				           fx:id="totalDistance" editable="false" disable="true"/>
+
+				<Button layoutX="90.0" layoutY="460.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0"
+				        text="开始求解"
+				        onMouseClicked="#resolve"
+				/>
+			</children>
 		</AnchorPane>
 	</children>
 

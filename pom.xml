@@ -13,6 +13,7 @@
 	<groupId>com.illidan.school</groupId>
 	<artifactId>tsp</artifactId>
 	<version>1.0-SNAPSHOT</version>
+
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -35,14 +36,37 @@
 			<version>${springboot-javafx-support.version}</version>
 		</dependency>
 
+		<!--<dependency>-->
+		<!--	<groupId>junit</groupId>-->
+		<!--	<artifactId>junit</artifactId>-->
+		<!--	<version>4.12</version>-->
+		<!--	<scope>test</scope>-->
+		<!--</dependency>-->
+
+		<!--<dependency>-->
+		<!--	<groupId>de.roskenet</groupId>-->
+		<!--	<artifactId>springboot-javafx-test</artifactId>-->
+		<!--	<version>${springboot-javafx-test.version}</version>-->
+		<!--	<scope>test</scope>-->
+		<!--</dependency>-->
+		<!---->
+		<!--<dependency>-->
+		<!--	<groupId>org.springframework.boot</groupId>-->
+		<!--	<artifactId>spring-boot-starter-test</artifactId>-->
+		<!--	<version>${spring-boot.version}</version>-->
+		<!--	<scope>test</scope>-->
+		<!--</dependency>-->
+
 		<dependency>
-			<groupId>de.roskenet</groupId>
-			<artifactId>springboot-javafx-test</artifactId>
-			<version>${springboot-javafx-test.version}</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.7.0</version>
 			<scope>test</scope>
 		</dependency>
 
+
 	</dependencies>
+
 	<build>
 		<resources>
 			<resource>
@@ -68,10 +92,27 @@
 		</resources>
 		<plugins>
 			<plugin>
+				<configuration>
+					<mainClass>com.illidan.tsp.TspApplication</mainClass>
+				</configuration>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+			</plugin>
+
 		</plugins>
 
 	</build>
